@@ -1,0 +1,134 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Tool Versions:</h2>
+IDE-Version: ÂµVision V5.37.0.0
+Copyright (C) 2022 ARM Ltd and ARM Germany GmbH. All rights reserved.
+License Information: Michi Sprich, ZHAW, LIC=----
+ 
+Tool Versions:
+Toolchain:       MDK-Lite  Version: 5.37.0.0
+Toolchain Path:  C:\Keil_v5\ARM\ARMCLANG\Bin
+C Compiler:      ArmClang.exe V6.18
+Assembler:       Armasm.exe V6.18
+Linker/Locator:  ArmLink.exe V6.18
+Library Manager: ArmAr.exe V6.18
+Hex Converter:   FromElf.exe V6.18
+CPU DLL:         SARMCM3.DLL V5.37.0.0
+Dialog DLL:      DARMCM1.DLL V1.19.6.0
+Target DLL:      STLink\ST-LINKIII-KEIL_SWO.dll V3.0.9.0
+Dialog DLL:      TARMCM1.DLL V1.14.6.0
+ 
+<h2>Project:</h2>
+C:\Users\michi\OneDrive\ZHAW\Semester_4\CT\Praktikum_9\lab_memory_SRAM_testing\code_ram\Lab.uvprojx
+Project File Date:  04/26/2023
+
+<h2>Output:</h2>
+*** Using Compiler 'V6.18', folder: 'C:\Keil_v5\ARM\ARMCLANG\Bin'
+Rebuild target 'Target 1'
+app/main.c(75): warning: implicit conversion loses integer precision: 'uint32_t' (aka 'unsigned int') to 'uint8_t' (aka 'unsigned char') [-Wimplicit-int-conversion]
+                                uint8_t value = *address_ptr;
+                                        ~~~~~   ^~~~~~~~~~~~
+app/main.c(76): warning: implicit conversion loses integer precision: 'int' to 'uint8_t' (aka 'unsigned char') [-Wimplicit-int-conversion]
+                                value = value << 1;
+                                      ~ ~~~~~~^~~~
+app/main.c(72): warning: mixing declarations and code is incompatible with standards before C99 [-Wdeclaration-after-statement]
+                        uint8_t counter = 0;
+                                ^
+app/main.c(36): warning: no previous extern declaration for non-static variable 'current_address' [-Wmissing-variable-declarations]
+uint64_t current_address;
+         ^
+app/main.c(36): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+uint64_t current_address;
+^
+app/main.c(37): warning: no previous extern declaration for non-static variable 'address_ptr' [-Wmissing-variable-declarations]
+uint32_t* address_ptr;
+          ^
+app/main.c(37): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+uint32_t* address_ptr;
+^
+5 warnings generated.
+compiling main.c...
+compiling hal_fmc.c...
+compiling hal_gpio.c...
+assembling datainit_ctboard.s...
+assembling startup_ctboard.s...
+compiling hal_rcc.c...
+compiling hal_ct_buttons.c...
+compiling hal_ct_lcd.c...
+compiling hal_pwr.c...
+compiling hal_ct_seg7.c...
+compiling system_ctboard.c...
+linking...
+Program Size: Code=6624 RO-data=444 RW-data=0 ZI-data=8208  
+".\build\Lab.axf" - 0 Error(s), 5 Warning(s).
+
+<h2>Software Packages used:</h2>
+
+Package Vendor: InES
+                https://ennis.zhaw.ch/pack/InES.CTBoard14_DFP.4.0.3.pack
+                InES.CTBoard14_DFP.4.0.3
+                CT Board 14 (STM32F429ZI) Device Support
+   * Component: Startup Version: 4.0.3
+   * Component: 7 segment Version: 4.0.0
+   * Component: LCD Version: 3.0.3
+   * Component: FMC Version: 3.0.1
+   * Component: GPIO Version: 4.0.1
+   * Component: PWR Version: 2.2.0
+   * Component: RCC Version: 4.0.1
+
+<h2>Collection of Component include folders:</h2>
+  ./RTE/_Target_1
+  C:/Keil_v5/ARM/InES/CTBoard14_DFP/4.0.3/Device/Include
+  C:/Keil_v5/ARM/InES/CTBoard14_DFP/4.0.3/Device/Include/m0
+  C:/Keil_v5/ARM/InES/CTBoard14_DFP/4.0.3/HAL/Include
+
+<h2>Collection of Component Files used:</h2>
+
+   * Component: InES::Device:Startup:4.0.3
+      Source file:   Device/Source/datainit_ctboard.s
+      Include file:  Device/Include/reg_ctboard.h
+      Include file:  Device/Include/m0/platform_ctboard.h
+      Source file:   Device/Source/startup_ctboard.s
+      Source file:   Device/Source/system_ctboard.c
+      Include file:  Device/Include/reg_stm32f4xx.h
+      Include file:  Device/Include/system_ctboard.h
+
+   * Component: InES::HAL:CT Board:7 segment:4.0.0
+      Include file:  HAL/Include/hal_ct_seg7.h
+      Source file:   HAL/Source/hal_ct_seg7.c
+      Include file:  Device/Include/reg_ctboard.h
+
+   * Component: InES::HAL:CT Board:LCD:3.0.3
+      Include file:  Device/Include/reg_ctboard.h
+      Include file:  HAL/Include/hal_ct_lcd.h
+      Source file:   HAL/Source/hal_ct_lcd.c
+
+   * Component: InES::HAL:FMC:3.0.1
+      Source file:   HAL/Source/hal_fmc.c
+      Include file:  HAL/Include/hal_common.h
+      Include file:  Device/Include/reg_stm32f4xx.h
+      Include file:  HAL/Include/hal_fmc.h
+
+   * Component: InES::HAL:GPIO:4.0.1
+      Include file:  Device/Include/reg_stm32f4xx.h
+      Include file:  HAL/Include/hal_common.h
+      Include file:  HAL/Include/hal_gpio.h
+      Source file:   HAL/Source/hal_gpio.c
+
+   * Component: InES::HAL:PWR:2.2.0
+      Include file:  HAL/Include/hal_common.h
+      Include file:  Device/Include/reg_stm32f4xx.h
+      Include file:  HAL/Include/hal_pwr.h
+      Source file:   HAL/Source/hal_pwr.c
+
+   * Component: InES::HAL:RCC:4.0.1
+      Include file:  Device/Include/reg_stm32f4xx.h
+      Include file:  HAL/Include/hal_common.h
+      Include file:  HAL/Include/hal_rcc.h
+      Source file:   HAL/Source/hal_rcc.c
+Build Time Elapsed:  00:00:01
+</pre>
+</body>
+</html>

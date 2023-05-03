@@ -1,0 +1,127 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Tool Versions:</h2>
+IDE-Version: ÂµVision V5.37.0.0
+Copyright (C) 2022 ARM Ltd and ARM Germany GmbH. All rights reserved.
+License Information: Michi Sprich, ZHAW, LIC=----
+ 
+Tool Versions:
+Toolchain:       MDK-Lite  Version: 5.37.0.0
+Toolchain Path:  C:\Keil_v5\ARM\ARMCLANG\Bin
+C Compiler:      ArmClang.exe V6.18
+Assembler:       Armasm.exe V6.18
+Linker/Locator:  ArmLink.exe V6.18
+Library Manager: ArmAr.exe V6.18
+Hex Converter:   FromElf.exe V6.18
+CPU DLL:         SARMCM3.DLL V5.37.0.0
+Dialog DLL:      DARMCM1.DLL V1.19.6.0
+Target DLL:      STLink\ST-LINKIII-KEIL_SWO.dll V3.0.9.0
+Dialog DLL:      TARMCM1.DLL V1.14.6.0
+ 
+<h2>Project:</h2>
+C:\Users\michi\OneDrive\ZHAW\Semester_4\CT\Praktikum_7\lab_adc\project\Lab.uvprojx
+Project File Date:  04/12/2023
+
+<h2>Output:</h2>
+*** Using Compiler 'V6.18', folder: 'C:\Keil_v5\ARM\ARMCLANG\Bin'
+Build target 'Target 1'
+assembling datainit_ctboard.s...
+assembling startup_ctboard.s...
+compiling hal_pwr.c...
+compiling hal_fmc.c...
+app/adc.c(101): warning: implicit conversion loses integer precision: 'volatile uint32_t' (aka 'volatile unsigned int') to 'uint16_t' (aka 'unsigned short') [-Wimplicit-int-conversion]
+                        adc_value = ADC3->DR;
+                                  ~ ~~~~~~^~
+app/adc.c(113): warning: no previous extern declaration for non-static variable 'bufferIndex' [-Wmissing-variable-declarations]
+int16_t bufferIndex = 0;
+        ^
+app/adc.c(113): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+int16_t bufferIndex = 0;
+^
+app/adc.c(123): warning: implicit conversion changes signedness: 'uint16_t' (aka 'unsigned short') to 'int16_t' (aka 'short') [-Wsign-conversion]
+                buffer[bufferIndex] = adc_value;
+                                    ~ ^~~~~~~~~
+app/adc.c(131): warning: implicit conversion loses integer precision: 'int' to 'uint16_t' (aka 'unsigned short') [-Wimplicit-int-conversion]
+    filtered_value = sum / BUFFER_SIZE;
+                   ~ ~~~~^~~~~~~~~~~~~
+app/adc.c(112): warning: no previous extern declaration for non-static variable 'buffer' [-Wmissing-variable-declarations]
+int16_t buffer[BUFFER_SIZE];
+        ^
+app/adc.c(112): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+int16_t buffer[BUFFER_SIZE];
+^
+5 warnings generated.
+compiling adc.c...
+compiling hal_gpio.c...
+compiling hal_ct_lcd.c...
+compiling hal_rcc.c...
+compiling main.c...
+compiling system_ctboard.c...
+linking...
+Program Size: Code=7550 RO-data=466 RW-data=0 ZI-data=8232  
+".\build\Lab.axf" - 0 Error(s), 5 Warning(s).
+
+<h2>Software Packages used:</h2>
+
+Package Vendor: InES
+                https://ennis.zhaw.ch/pack/InES.CTBoard14_DFP.4.0.3.pack
+                InES.CTBoard14_DFP.4.0.3
+                CT Board 14 (STM32F429ZI) Device Support
+   * Component: Startup Version: 4.0.3
+   * Component: LCD Version: 3.0.3
+   * Component: FMC Version: 3.0.1
+   * Component: GPIO Version: 4.0.1
+   * Component: PWR Version: 2.2.0
+   * Component: RCC Version: 4.0.1
+
+<h2>Collection of Component include folders:</h2>
+  ./RTE/_Target_1
+  C:/Keil_v5/ARM/InES/CTBoard14_DFP/4.0.3/Device/Include
+  C:/Keil_v5/ARM/InES/CTBoard14_DFP/4.0.3/Device/Include/m0
+  C:/Keil_v5/ARM/InES/CTBoard14_DFP/4.0.3/HAL/Include
+
+<h2>Collection of Component Files used:</h2>
+
+   * Component: InES::Device:Startup:4.0.3
+      Include file:  Device/Include/system_ctboard.h
+      Source file:   Device/Source/startup_ctboard.s
+      Include file:  Device/Include/m0/platform_ctboard.h
+      Include file:  Device/Include/reg_stm32f4xx.h
+      Include file:  Device/Include/reg_ctboard.h
+      Source file:   Device/Source/datainit_ctboard.s
+      Source file:   Device/Source/system_ctboard.c
+
+   * Component: InES::HAL:CT Board:LCD:3.0.3
+      Include file:  Device/Include/reg_ctboard.h
+      Source file:   HAL/Source/hal_ct_lcd.c
+      Include file:  HAL/Include/hal_ct_lcd.h
+
+   * Component: InES::HAL:FMC:3.0.1
+      Include file:  HAL/Include/hal_common.h
+      Source file:   HAL/Source/hal_fmc.c
+      Include file:  Device/Include/reg_stm32f4xx.h
+      Include file:  HAL/Include/hal_fmc.h
+
+   * Component: InES::HAL:GPIO:4.0.1
+      Include file:  Device/Include/reg_stm32f4xx.h
+      Include file:  HAL/Include/hal_common.h
+      Include file:  HAL/Include/hal_gpio.h
+      Source file:   HAL/Source/hal_gpio.c
+
+   * Component: InES::HAL:PWR:2.2.0
+      Include file:  HAL/Include/hal_pwr.h
+      Include file:  Device/Include/reg_stm32f4xx.h
+      Source file:   HAL/Source/hal_pwr.c
+      Include file:  HAL/Include/hal_common.h
+
+   * Component: InES::HAL:RCC:4.0.1
+      Include file:  Device/Include/reg_stm32f4xx.h
+      Source file:   HAL/Source/hal_rcc.c
+      Include file:  HAL/Include/hal_common.h
+      Include file:  HAL/Include/hal_rcc.h
+Build Time Elapsed:  00:00:02
+</pre>
+</body>
+</html>

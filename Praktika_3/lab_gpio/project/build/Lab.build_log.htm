@@ -1,0 +1,176 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Tool Versions:</h2>
+IDE-Version: ÂµVision V5.37.0.0
+Copyright (C) 2022 ARM Ltd and ARM Germany GmbH. All rights reserved.
+License Information: Michi Sprich, ZHAW, LIC=----
+ 
+Tool Versions:
+Toolchain:       MDK-Lite  Version: 5.37.0.0
+Toolchain Path:  C:\Keil_v5\ARM\ARMCLANG\Bin
+C Compiler:      ArmClang.exe V6.18
+Assembler:       Armasm.exe V6.18
+Linker/Locator:  ArmLink.exe V6.18
+Library Manager: ArmAr.exe V6.18
+Hex Converter:   FromElf.exe V6.18
+CPU DLL:         SARMCM3.DLL V5.37.0.0
+Dialog DLL:      DARMCM1.DLL V1.19.6.0
+Target DLL:      STLink\ST-LINKIII-KEIL_SWO.dll V3.0.9.0
+Dialog DLL:      TARMCM1.DLL V1.14.6.0
+ 
+<h2>Project:</h2>
+C:\Users\michi\OneDrive\ZHAW\Semester_4\CT\Praktika_3\lab_gpio\project\gpio.uvprojx
+Project File Date:  03/08/2023
+
+<h2>Output:</h2>
+*** Using Compiler 'V6.18', folder: 'C:\Keil_v5\ARM\ARMCLANG\Bin'
+Build target 'Target 1'
+app/main.c(74): warning: implicit conversion changes signedness: 'int' to 'unsigned int' [-Wsign-conversion]
+                GPIOA->MODER &= ~(0x03 << 0);
+                             ~~ ^~~~~~~~~~~~
+app/main.c(75): warning: implicit conversion changes signedness: 'int' to 'unsigned int' [-Wsign-conversion]
+                GPIOA->MODER &= ~(0x03 << 2);
+                             ~~ ^~~~~~~~~~~~
+app/main.c(76): warning: implicit conversion changes signedness: 'int' to 'unsigned int' [-Wsign-conversion]
+                GPIOA->MODER &= ~(0x03 << 4);
+                             ~~ ^~~~~~~~~~~~
+app/main.c(82): warning: implicit conversion changes signedness: 'int' to 'unsigned int' [-Wsign-conversion]
+                GPIOA->PUPDR &= ~(0x03 << 0);
+                             ~~ ^~~~~~~~~~~~
+app/main.c(83): warning: implicit conversion changes signedness: 'int' to 'unsigned int' [-Wsign-conversion]
+                GPIOA->PUPDR &= ~(0x03 << 2);
+                             ~~ ^~~~~~~~~~~~
+app/main.c(84): warning: implicit conversion changes signedness: 'int' to 'unsigned int' [-Wsign-conversion]
+                GPIOA->PUPDR &= ~(0x03 << 4);
+                             ~~ ^~~~~~~~~~~~
+app/main.c(86): warning: implicit conversion changes signedness: 'int' to 'unsigned int' [-Wsign-conversion]
+                GPIOA->PUPDR |= ~(0x02 << 0);
+                             ~~ ^~~~~~~~~~~~
+app/main.c(87): warning: implicit conversion changes signedness: 'int' to 'unsigned int' [-Wsign-conversion]
+                GPIOA->PUPDR |= ~(0x01 << 2);
+                             ~~ ^~~~~~~~~~~~
+app/main.c(88): warning: implicit conversion changes signedness: 'int' to 'unsigned int' [-Wsign-conversion]
+                GPIOA->PUPDR |= ~(0x00 << 4);
+                             ~~ ^~~~~~~~~~~~
+app/main.c(91): warning: implicit conversion changes signedness: 'int' to 'unsigned int' [-Wsign-conversion]
+                GPIOB->MODER &= ~(0x03 << 0);
+                             ~~ ^~~~~~~~~~~~
+app/main.c(92): warning: implicit conversion changes signedness: 'int' to 'unsigned int' [-Wsign-conversion]
+                GPIOB->MODER &= ~(0x03 << 2);
+                             ~~ ^~~~~~~~~~~~
+app/main.c(93): warning: implicit conversion changes signedness: 'int' to 'unsigned int' [-Wsign-conversion]
+                GPIOB->MODER &= ~(0x03 << 4);
+                             ~~ ^~~~~~~~~~~~
+app/main.c(99): warning: implicit conversion changes signedness: 'int' to 'unsigned int' [-Wsign-conversion]
+                GPIOB->OTYPER &= ~(0x01 << 0);
+                              ~~ ^~~~~~~~~~~~
+app/main.c(100): warning: implicit conversion changes signedness: 'int' to 'unsigned int' [-Wsign-conversion]
+                GPIOB->OTYPER &= ~(0x01 << 1);
+                              ~~ ^~~~~~~~~~~~
+app/main.c(101): warning: implicit conversion changes signedness: 'int' to 'unsigned int' [-Wsign-conversion]
+                GPIOB->OTYPER &= ~(0x01 << 2);
+                              ~~ ^~~~~~~~~~~~
+app/main.c(107): warning: implicit conversion changes signedness: 'int' to 'unsigned int' [-Wsign-conversion]
+                GPIOB->PUPDR &= ~(0x03 << 0);
+                             ~~ ^~~~~~~~~~~~
+app/main.c(108): warning: implicit conversion changes signedness: 'int' to 'unsigned int' [-Wsign-conversion]
+                GPIOB->PUPDR &= ~(0x03 << 2);
+                             ~~ ^~~~~~~~~~~~
+app/main.c(109): warning: implicit conversion changes signedness: 'int' to 'unsigned int' [-Wsign-conversion]
+                GPIOB->PUPDR &= ~(0x03 << 4);
+                             ~~ ^~~~~~~~~~~~
+app/main.c(115): warning: implicit conversion changes signedness: 'int' to 'unsigned int' [-Wsign-conversion]
+                GPIOB->OSPEEDR &= ~(0x03 << 0);
+                               ~~ ^~~~~~~~~~~~
+app/main.c(116): warning: implicit conversion changes signedness: 'int' to 'unsigned int' [-Wsign-conversion]
+                GPIOB->OSPEEDR &= ~(0x03 << 2);
+                               ~~ ^~~~~~~~~~~~
+app/main.c(117): warning: implicit conversion changes signedness: 'int' to 'unsigned int' [-Wsign-conversion]
+                GPIOB->OSPEEDR &= ~(0x03 << 4);
+                               ~~ ^~~~~~~~~~~~
+app/main.c(135): warning: implicit conversion loses integer precision: 'volatile uint32_t' (aka 'volatile unsigned int') to 'uint8_t' (aka 'unsigned char') [-Wimplicit-int-conversion]
+                                read_odr = GPIOA->IDR;          /// read signal transfered trough cable
+                                         ~ ~~~~~~~^~~
+app/main.c(141): warning: implicit conversion loses integer precision: 'volatile uint32_t' (aka 'volatile unsigned int') to 'uint8_t' (aka 'unsigned char') [-Wimplicit-int-conversion]
+                                CT_LED->BYTE.LED7_0 = GPIOB->ODR;
+                                                    ~ ~~~~~~~^~~
+app/main.c(34): warning: unused variable 'data_gpio_in' [-Wunused-variable]
+    uint16_t data_gpio_in;              // use to read input values from gpio
+             ^
+app/main.c(35): warning: unused variable 'data_dip_switch' [-Wunused-variable]
+    uint8_t data_dip_switch;            // use to read values from dip switches
+            ^
+app/main.c(36): warning: unused variable 'data_read_pa' [-Wunused-variable]
+                uint8_t data_read_pa;
+                        ^
+26 warnings generated.
+compiling main.c...
+linking...
+Program Size: Code=6880 RO-data=444 RW-data=0 ZI-data=8192  
+".\build\Lab.axf" - 0 Error(s), 26 Warning(s).
+
+<h2>Software Packages used:</h2>
+
+Package Vendor: InES
+                https://ennis.zhaw.ch/pack/InES.CTBoard14_DFP.4.0.3.pack
+                InES.CTBoard14_DFP.4.0.3
+                CT Board 14 (STM32F429ZI) Device Support
+   * Component: Startup Version: 4.0.3
+   * Component: FMC Version: 3.0.1
+   * Component: GPIO Version: 4.0.1
+   * Component: PWR Version: 2.2.0
+   * Component: RCC Version: 4.0.1
+   * Component: TIMER Version: 4.0.1
+
+<h2>Collection of Component include folders:</h2>
+  ./RTE/_Target_1
+  C:/Keil_v5/ARM/InES/CTBoard14_DFP/4.0.3/Device/Include
+  C:/Keil_v5/ARM/InES/CTBoard14_DFP/4.0.3/Device/Include/m0
+  C:/Keil_v5/ARM/InES/CTBoard14_DFP/4.0.3/HAL/Include
+
+<h2>Collection of Component Files used:</h2>
+
+   * Component: InES::Device:Startup:4.0.3
+      Source file:   Device/Source/system_ctboard.c
+      Source file:   Device/Source/startup_ctboard.s
+      Include file:  Device/Include/system_ctboard.h
+      Include file:  Device/Include/reg_ctboard.h
+      Source file:   Device/Source/datainit_ctboard.s
+      Include file:  Device/Include/reg_stm32f4xx.h
+      Include file:  Device/Include/m0/platform_ctboard.h
+
+   * Component: InES::HAL:FMC:3.0.1
+      Source file:   HAL/Source/hal_fmc.c
+      Include file:  HAL/Include/hal_fmc.h
+      Include file:  Device/Include/reg_stm32f4xx.h
+      Include file:  HAL/Include/hal_common.h
+
+   * Component: InES::HAL:GPIO:4.0.1
+      Include file:  HAL/Include/hal_common.h
+      Include file:  Device/Include/reg_stm32f4xx.h
+      Include file:  HAL/Include/hal_gpio.h
+      Source file:   HAL/Source/hal_gpio.c
+
+   * Component: InES::HAL:PWR:2.2.0
+      Include file:  Device/Include/reg_stm32f4xx.h
+      Source file:   HAL/Source/hal_pwr.c
+      Include file:  HAL/Include/hal_common.h
+      Include file:  HAL/Include/hal_pwr.h
+
+   * Component: InES::HAL:RCC:4.0.1
+      Source file:   HAL/Source/hal_rcc.c
+      Include file:  HAL/Include/hal_rcc.h
+      Include file:  Device/Include/reg_stm32f4xx.h
+      Include file:  HAL/Include/hal_common.h
+
+   * Component: InES::HAL:TIMER:4.0.1
+      Include file:  HAL/Include/hal_common.h
+      Source file:   HAL/Source/hal_timer.c
+      Include file:  HAL/Include/hal_timer.h
+      Include file:  Device/Include/reg_stm32f4xx.h
+Build Time Elapsed:  00:00:01
+</pre>
+</body>
+</html>
