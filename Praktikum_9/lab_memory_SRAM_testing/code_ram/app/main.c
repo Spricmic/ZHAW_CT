@@ -32,9 +32,17 @@
 
 #define START_SRAM2 0x64000000
 #define END_SRAM2 0x640007FF
+#define CHECKERBOARD 0xAA
+#define CHECKERBOARD_INV 0x55
 
 uint64_t current_address;
 uint32_t* address_ptr;
+uint8_t testing_value;
+uint8_t walking_errors = 0x0;
+uint32_t* checker_address_ptr;
+int address_shifts[] ={0x0, 0x1, 0x2, 0x4, 0x8, 0x10, 0x20, 0x40, 0x80, 0x100, 0x200, 0x400, 0x800};
+uint16_t address_errors = 0x0;
+uint16_t error_display = 0x0;
 /// END: To be programmed
 
 int main(void)
@@ -68,18 +76,31 @@ int main(void)
     /// STUDENTS: To be programmed
 		// inkrementiert die current_address von anfang des speichers bis zum ende
 		current_address = START_SRAM2;
-		while (current_address <= END_SRAM2){
+		address_ptr = (uint32_t*)(uintptr_t)current_address;
+		uint8_t counter = 0;
+		testing_value = 0x1;
+		walking_errors = 0x0;
+		while (counter < 7){
+			*address_ptr = testing_value;
+			if (*address_ptr != testing_value){
+				walking_errors = walking_errors | testing_value;
+			}
+			testing_value = testing_value << 1;
+		}
+		CT_LED->BYTE.LED7_0 = walking_errors;
+		
+		/*while (current_address <= END_SRAM2){
 			address_ptr = (uint32_t*)(uintptr_t)current_address;
 			// führt den Wert 1 durch alle 8 bits im current_address register
 			uint8_t counter = 0;
 			*address_ptr = 0x1;
 			while (counter < 7){
-				uint8_t value = *address_ptr;
+				uint32_t value = *address_ptr;
 				value = value << 1;
 				*address_ptr = value;
 			}
 			current_address++;
-		}
+		}*/
 		
 
 
@@ -107,8 +128,46 @@ int main(void)
      */
     
     /// STUDENTS: To be programmed
+		for (int i = 0; i<NR_OF_ADDRESS_LINES; i++){
+			current_address = START_SRAM2 & address_shifts[i];
+			address_ptr = (uint32_t*)(uintptr_t)current_address;
+			*address_ptr = CHECKERBOARD;
+		}
+		
+		for (int i = 0; i<NR_OF_ADDRESS_LINES; i++){
+			current_address = START_SRAM2 & address_shifts[i];
+			checker_address_ptr = (uint32_t*)(uintptr_t)current_address;
+			*checker_address_ptr = CHECKERBOARD_INV;
+			for (int j = 0; j<NR_OF_ADDRESS_LINES; j++){
+				current_address = START_SRAM2 & address_shifts[i];
+				address_ptr = (uint32_t*)(uintptr_t)current_address;
+				
+				if(address_ptr != checker_address_ptr){
+					
+					if (*address_ptr == CHECKERBOARD){
+					}
+					else{
+						address_errors |= (1 << i);
+					}
+				}
+				else{
+					
+				if (*address_ptr == CHECKERBOARD_INV){
+					}
+					else{
+						address_errors |= (1 << i);
+					}
+				}
+			}
+		}
 
-
+		error_display = address_errors >> 1;
+		if ((address_errors && 0x1) == 1){
+			error_display |= 0xF000;
+		}
+		else{
+		}
+		CT_LED->HWORD.LED31_16 = walking_errors;
 
 
      /// END: To be programmed
