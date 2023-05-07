@@ -24,6 +24,7 @@
  */
 static void run_simulation(void)
 {
+	
     /* Loop through columns */
     for (uint16_t j = 0; j < ARRAY_COLUMNS; j++) {
         /* Loop through rows */
