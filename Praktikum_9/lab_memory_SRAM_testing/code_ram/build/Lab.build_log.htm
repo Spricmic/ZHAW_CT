@@ -21,81 +21,16 @@ Target DLL:      STLink\ST-LINKIII-KEIL_SWO.dll V3.0.9.0
 Dialog DLL:      TARMCM1.DLL V1.14.6.0
  
 <h2>Project:</h2>
-C:\Users\michi\Documents\ZHAW_Local_home\ZHAW_CT\Praktikum_9\lab_memory_SRAM_testing\code_ram\Lab.uvprojx
-Project File Date:  05/05/2023
+C:\Users\michi\Documents\CT\ZHAW_CT\Praktikum_9\lab_memory_SRAM_testing\code_ram\Lab.uvprojx
+Project File Date:  05/10/2023
 
 <h2>Output:</h2>
 *** Using Compiler 'V6.18', folder: 'C:\Keil_v5\ARM\ARMCLANG\Bin'
 Build target 'Target 1'
-assembling startup_ctboard.s...
-assembling datainit_ctboard.s...
-compiling hal_ct_buttons.c...
-compiling hal_ct_seg7.c...
-compiling hal_pwr.c...
-compiling hal_ct_lcd.c...
-compiling hal_gpio.c...
-compiling hal_rcc.c...
-app/main.c(41): warning: no previous extern declaration for non-static variable 'walking_errors' [-Wmissing-variable-declarations]
-uint8_t walking_errors = 0x0;
-        ^
-app/main.c(41): note: declare 'static' if the variable is not intended to be used outside of this translation unit
-uint8_t walking_errors = 0x0;
-^
-app/main.c(43): warning: no previous extern declaration for non-static variable 'address_shifts' [-Wmissing-variable-declarations]
-int address_shifts[] ={0x0, 0x1, 0x2, 0x4, 0x8, 0x10, 0x20, 0x40, 0x80, 0x100, 0x200, 0x400, 0x800};
-    ^
-app/main.c(43): note: declare 'static' if the variable is not intended to be used outside of this translation unit
-int address_shifts[] ={0x0, 0x1, 0x2, 0x4, 0x8, 0x10, 0x20, 0x40, 0x80, 0x100, 0x200, 0x400, 0x800};
-^
-app/main.c(44): warning: no previous extern declaration for non-static variable 'address_errors' [-Wmissing-variable-declarations]
-uint16_t address_errors = 0x0;
-         ^
-app/main.c(44): note: declare 'static' if the variable is not intended to be used outside of this translation unit
-uint16_t address_errors = 0x0;
-^
-app/main.c(45): warning: no previous extern declaration for non-static variable 'error_display' [-Wmissing-variable-declarations]
-uint16_t error_display = 0x0;
-         ^
-app/main.c(45): note: declare 'static' if the variable is not intended to be used outside of this translation unit
-uint16_t error_display = 0x0;
-^
-app/main.c(88): warning: implicit conversion loses integer precision: 'int' to 'uint8_t' (aka 'unsigned char') [-Wimplicit-int-conversion]
-                        testing_value = testing_value << 1;
-                                      ~ ~~~~~~~~~~~~~~^~~~
-app/main.c(80): warning: mixing declarations and code is incompatible with standards before C99 [-Wdeclaration-after-statement]
-                uint8_t counter = 0;
-                        ^
-app/main.c(38): warning: no previous extern declaration for non-static variable 'current_address' [-Wmissing-variable-declarations]
-uint64_t current_address;
-         ^
-app/main.c(38): note: declare 'static' if the variable is not intended to be used outside of this translation unit
-uint64_t current_address;
-^
-app/main.c(39): warning: no previous extern declaration for non-static variable 'address_ptr' [-Wmissing-variable-declarations]
-uint32_t* address_ptr;
-          ^
-app/main.c(39): note: declare 'static' if the variable is not intended to be used outside of this translation unit
-uint32_t* address_ptr;
-^
-app/main.c(40): warning: no previous extern declaration for non-static variable 'testing_value' [-Wmissing-variable-declarations]
-uint8_t testing_value;
-        ^
-app/main.c(40): note: declare 'static' if the variable is not intended to be used outside of this translation unit
-uint8_t testing_value;
-^
-app/main.c(42): warning: no previous extern declaration for non-static variable 'checker_address_ptr' [-Wmissing-variable-declarations]
-uint32_t* checker_address_ptr;
-          ^
-app/main.c(42): note: declare 'static' if the variable is not intended to be used outside of this translation unit
-uint32_t* checker_address_ptr;
-^
-10 warnings generated.
 compiling main.c...
-compiling hal_fmc.c...
-compiling system_ctboard.c...
 linking...
-Program Size: Code=6960 RO-data=460 RW-data=52 ZI-data=8228  
-".\build\Lab.axf" - 0 Error(s), 10 Warning(s).
+Program Size: Code=6772 RO-data=444 RW-data=0 ZI-data=8192  
+".\build\Lab.axf" - 0 Error(s), 0 Warning(s).
 
 <h2>Software Packages used:</h2>
 
@@ -113,54 +48,54 @@ Package Vendor: InES
 
 <h2>Collection of Component include folders:</h2>
   ./RTE/_Target_1
-  C:/Keil_v5/ARM/PACK/InES/CTBoard14_DFP/4.0.3/Device/Include
-  C:/Keil_v5/ARM/PACK/InES/CTBoard14_DFP/4.0.3/Device/Include/m0
-  C:/Keil_v5/ARM/PACK/InES/CTBoard14_DFP/4.0.3/HAL/Include
+  C:/Keil_v5/ARM/InES/CTBoard14_DFP/4.0.3/Device/Include
+  C:/Keil_v5/ARM/InES/CTBoard14_DFP/4.0.3/Device/Include/m0
+  C:/Keil_v5/ARM/InES/CTBoard14_DFP/4.0.3/HAL/Include
 
 <h2>Collection of Component Files used:</h2>
 
    * Component: InES::Device:Startup:4.0.3
-      Source file:   Device/Source/system_ctboard.c
-      Include file:  Device/Include/reg_ctboard.h
       Include file:  Device/Include/m0/platform_ctboard.h
-      Include file:  Device/Include/system_ctboard.h
       Include file:  Device/Include/reg_stm32f4xx.h
-      Source file:   Device/Source/startup_ctboard.s
+      Include file:  Device/Include/reg_ctboard.h
       Source file:   Device/Source/datainit_ctboard.s
+      Include file:  Device/Include/system_ctboard.h
+      Source file:   Device/Source/startup_ctboard.s
+      Source file:   Device/Source/system_ctboard.c
 
    * Component: InES::HAL:CT Board:7 segment:4.0.0
+      Include file:  Device/Include/reg_ctboard.h
       Include file:  HAL/Include/hal_ct_seg7.h
       Source file:   HAL/Source/hal_ct_seg7.c
-      Include file:  Device/Include/reg_ctboard.h
 
    * Component: InES::HAL:CT Board:LCD:3.0.3
-      Source file:   HAL/Source/hal_ct_lcd.c
       Include file:  Device/Include/reg_ctboard.h
+      Source file:   HAL/Source/hal_ct_lcd.c
       Include file:  HAL/Include/hal_ct_lcd.h
 
    * Component: InES::HAL:FMC:3.0.1
-      Include file:  HAL/Include/hal_common.h
-      Source file:   HAL/Source/hal_fmc.c
-      Include file:  Device/Include/reg_stm32f4xx.h
       Include file:  HAL/Include/hal_fmc.h
+      Include file:  Device/Include/reg_stm32f4xx.h
+      Source file:   HAL/Source/hal_fmc.c
+      Include file:  HAL/Include/hal_common.h
 
    * Component: InES::HAL:GPIO:4.0.1
-      Include file:  Device/Include/reg_stm32f4xx.h
-      Include file:  HAL/Include/hal_gpio.h
-      Source file:   HAL/Source/hal_gpio.c
       Include file:  HAL/Include/hal_common.h
+      Source file:   HAL/Source/hal_gpio.c
+      Include file:  HAL/Include/hal_gpio.h
+      Include file:  Device/Include/reg_stm32f4xx.h
 
    * Component: InES::HAL:PWR:2.2.0
+      Include file:  HAL/Include/hal_common.h
+      Source file:   HAL/Source/hal_pwr.c
       Include file:  HAL/Include/hal_pwr.h
       Include file:  Device/Include/reg_stm32f4xx.h
-      Source file:   HAL/Source/hal_pwr.c
-      Include file:  HAL/Include/hal_common.h
 
    * Component: InES::HAL:RCC:4.0.1
       Include file:  HAL/Include/hal_common.h
+      Source file:   HAL/Source/hal_rcc.c
       Include file:  Device/Include/reg_stm32f4xx.h
       Include file:  HAL/Include/hal_rcc.h
-      Source file:   HAL/Source/hal_rcc.c
 Build Time Elapsed:  00:00:00
 </pre>
 </body>

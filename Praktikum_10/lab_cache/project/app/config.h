@@ -19,9 +19,9 @@
 
 /* Split Up Cache:  / TAG / INDEX / OFFSET /                       */
 /* Offset size in bits */
-#define OFFSET 4
+#define OFFSET 8
 /* Index size in bits */
-#define INDEX  3
+#define INDEX  2
 
 /* Tag size in bits */
 #define TAG    (ADDRESS_SIZE - INDEX - OFFSET)
@@ -34,7 +34,7 @@
  * --------------------------------------------------------------- */
 
 /* Row count of the arrays */
-#define ARRAY_ROWS 5
+#define ARRAY_ROWS 50
 
 /* Column count of the arrays */
 #define ARRAY_COLUMNS 10
