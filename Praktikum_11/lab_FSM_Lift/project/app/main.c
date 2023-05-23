@@ -29,9 +29,16 @@ int main(void)
 {
     /// STUDENTS: To be programmed
 
-
+			event_t event;
+			fsm_init();
+			timer_init();
+ while (1) {
+							event = eh_get_event();
+									if (event != EV_NO_EVENT){
+									fsm_handle_event(event);
+									}
+						}
 
 
     /// END: To be programmed
 }
-
